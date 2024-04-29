@@ -14,6 +14,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+
+Route::middleware([])->group(function () {
+
+    Route::namespace('Auth')->prefix('/auth')->group(function () {
+        Route::prefix('/client')->group(function () {
+            Route::get('signin', 'ClientAuthentication@signIn');
+        });
+    });
+
+    // Route::middleware('auth::client-api')->group(function () {
+
+    // });
+
+    // Route::middleware('auth::manager-api')->group(function () {
+
+    // });
+
+    // Route::middleware('auth:driver-api')->group(function () {
+
+    // });
+
 });
