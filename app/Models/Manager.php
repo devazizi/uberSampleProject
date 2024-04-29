@@ -9,5 +9,5 @@ class Manager extends Model
 {
     use HasFactory;
 
-    public $fillable = ['name', 'status'];
+    public $fillable = ['name', 'status', 'cell_number'];
 }

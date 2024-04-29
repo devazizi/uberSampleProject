@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->boolean('status');
+            $table->string('cell_number')->unique();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

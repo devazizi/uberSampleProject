@@ -29,7 +29,10 @@ class CitySeeder extends Seeder
     public function run(): void
     {
         foreach ($this->getCities() as $cityKey => $city) {
-            City::query()->findOrNew($city['id'], $city);
+            City::create([
+                'name' => $city['name'],
+                'name_en' => $city['name_en']
+            ]);
         }
     }
 }
