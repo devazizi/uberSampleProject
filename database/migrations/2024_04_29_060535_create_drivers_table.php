@@ -21,6 +21,8 @@ return new class extends Migration
             $table->unsignedInteger('active_city_id');
             $table->boolean('is_verified');
             $table->boolean('is_banned');
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
