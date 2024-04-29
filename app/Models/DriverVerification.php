@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class DriverVerification extends Model
 {
     use HasFactory;
+
+    public $fillable = ['driver_id', 'status', 'description'];
+
+    public function driver()
+    {
+        return $this->belongsTo(Driver::class);
+    }
 }

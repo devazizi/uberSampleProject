@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Manager extends Model
+class City extends Model
 {
     use HasFactory;
 
-    public $fillable = ['name', 'status'];
+    public $fillable = ['name', 'name_en'];
 }
